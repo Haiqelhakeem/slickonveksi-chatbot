@@ -1,0 +1,51 @@
+version: "3.1"
+
+stories:
+  - story: ask company profile
+    steps:
+      - intent: ask_profile
+      - action: utter_ask_profile
+
+  - story: ask materials
+    steps:
+      - intent: ask_materials
+      - action: utter_materials
+
+  - story: ask clothes
+    steps:
+      - intent: ask_clothes
+      - action: utter_clothes
+      
+  - story: order clothes
+    steps:
+      - intent: order_clothes
+      - action: order_form
+      - active_loop: order_form
+      - action: utter_order_summary
+
+  - story: happy path
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_great
+      - action: utter_happy
+
+  - story: sad path 1
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: affirm
+      - action: utter_happy
+
+  - story: sad path 2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: deny
+      - action: utter_goodbye

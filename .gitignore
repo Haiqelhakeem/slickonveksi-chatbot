@@ -10,4 +10,3 @@ __pycache__/
 # Rasa logs and database
 .rasa/
 logs/
-data/

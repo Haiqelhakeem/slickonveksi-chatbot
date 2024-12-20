@@ -1,0 +1,168 @@
+version: "3.1"
+
+nlu:
+  - intent: ask_profile
+    examples: |
+      - profil
+      - profil perusahaan
+      - perusahaan apa kamu?
+      - perusahaan
+      - apa yang kamu buat?
+
+  - intent: ask_clothes
+    examples: |
+      - pakaian
+      - apa pakaian yang kamu buat?
+      - apa saja pakaian yang kamu buat?
+      - pakaian apa yang kamu buat?
+      - jenis pakaian
+      - apa jenis pakaian yang kamu buat?
+      - apa saja jenis pakaian yang kamu buat?
+
+  - intent: order_clothes
+    examples: |
+      - pesan
+      - saya mau pesan
+      - saya ingin pesan
+      - beli
+      - ingin beli
+      - saya ingin beli
+      - saya mau beli
+      - belanja
+      - saya ingin berbelanja
+
+  - intent: ask_materials
+    examples: |
+      - bahan
+      - apa bahan dari produk kamu?
+      - apa saja bahan yang digunakan?
+      - bahan apa yang digunakan?
+      - bahan apa yang kamu gunakan?
+      - apa saja bahan yang kamu gunakan?
+      - apa jenis bahan yang kamu gunakan?
+
+  - intent: specify_clothing_type
+    examples: |
+      - saya ingin pesan [jaket](clothing_type)
+      - saya ingin beli [jaket](clothing_type)
+      - saya ingin pesan [kemeja](clothing_type)
+      - saya ingin beli [kemeja](clothing_type)
+      - saya ingin pesan [kaos](clothing_type)
+      - saya ingin beli [kaos](clothing_type)
+      - saya ingin pesan [hoodie](clothing_type)
+      - saya ingin beli [hoodie](clothing_type)
+      - saya ingin pesan [jersey](clothing_type)
+      - saya ingin beli [jersey](clothing_type)
+
+  - intent: specify_materials
+    examples: |
+      - saya ingin bahan [katun](materials)
+      - saya ingin bahan [cotton](materials)
+      - saya ingin bahan [cotton combad 24s](materials)
+      - saya ingin bahan [cotton combad 30s](materials)
+      - saya ingin bahan [american drill](materials)
+      - saya ingin bahan [fleece](materials)
+
+  - intent: specify_quantity
+    examples: |
+      - saya ingin [5](quantity) buah
+      - saya ingin membeli [5](quantity)
+      - saya ingin pesan [10](quantity)
+      - pesan [10](quantity) buah
+      - [12](quantity) jaket
+      - [5](quantity) kaos
+
+  - intent: greet
+    examples: |
+      - hai
+      - halo
+      - hi
+      - hello there
+      - selamat pagi
+      - selamat siang
+      - selamat sore
+      - selamat malam
+      - pagi
+      - siang
+      - sore
+      - malam
+      - moin
+      - hey there
+      - let's go
+      - hey dude
+      - goodmorning
+      - goodevening
+      - good afternoon
+
+  - intent: goodbye
+    examples: |
+      - cu
+      - good by
+      - cee you later
+      - good night
+      - bye
+      - goodbye
+      - have a nice day
+      - see you around
+      - bye bye
+      - see you later
+
+  - intent: affirm
+    examples: |
+      - yes
+      - y
+      - indeed
+      - of course
+      - that sounds good
+      - correct
+
+  - intent: deny
+    examples: |
+      - no
+      - n
+      - never
+      - I don't think so
+      - don't like that
+      - no way
+      - not really
+
+  - intent: mood_great
+    examples: |
+      - perfect
+      - great
+      - amazing
+      - feeling like a king
+      - wonderful
+      - I am feeling very good
+      - I am great
+      - I am amazing
+      - I am going to save the world
+      - super stoked
+      - extremely good
+      - so so perfect
+      - so good
+      - so perfect
+
+  - intent: mood_unhappy
+    examples: |
+      - my day was horrible
+      - I am sad
+      - I don't feel very well
+      - I am disappointed
+      - super sad
+      - I'm so sad
+      - sad
+      - very sad
+      - unhappy
+      - not good
+      - not very good
+      - extremly sad
+      - so saad
+      - so sad
+
+  - intent: bot_challenge
+    examples: |
+      - are you a bot?
+      - are you a human?
+      - am I talking to a bot?
+      - am I talking to a human?
