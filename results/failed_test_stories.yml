@@ -1,0 +1,9 @@
+version: "3.1"
+stories:
+- story: order clothing with material and quantity (.\tests\test_stories.yml)
+  steps:
+  - intent: orders
+  - action: order_form
+  - active_loop: order_form
+  - active_loop: null
+  - action: utter_summary  # predicted: action_listen

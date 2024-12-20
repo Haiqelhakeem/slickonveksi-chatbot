@@ -8,42 +8,88 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
-  - profile
+  - ask_profile
+  - ask_materials
+  - ask_clothes
+  - order_clothes
+  - specify_clothing_type
+  - specify_materials
+  - specify_quantity
+
+entities:
+  - clothing_type
   - materials
-  - clothes
-  - orders
+  - quantity
+
+slots:
+  clothing_type:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: clothing_type
+
+  materials:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: materials
+
+  quantity:
+    type: float
+    mappings:
+      - type: from_entity
+        entity: quantity
+
+forms:
+  order_form:
+    required_slots:
+      - clothing_type
+      - materials
+      - quantity
+
+actions:
+  - action_ask_clothing_type
+  - action_ask_material
+  - action_ask_quantity
+  - action_summary
 
 responses:
-  utter_profile:
-  - text: "Slickonveksi adalah perusahaan di bidang konveksi untuk membuat berbagai jenis pakaian."
+  utter_greet:
+    - text: "Halo! Selamat datang di Slickonveksi. Apa yang bisa kami bantu?"
 
-  utter_materials:
-  - text: "Kami memiliki berbagai bahan untuk membuat pakaian, seperti cotton combad 24s dan 30s, american drill, dan fleece."
+  utter_ask_profile:
+    - text: "Slickonveksi adalah perusahaan di bidang konveksi untuk membuat berbagai jenis pakaian."
 
   utter_clothes:
-  - text: "Kami dapat membuat pakaian seperti kemeja, kaos, jaket varsity, hoodie, dan berbagai macam jersey."
+    - text: "Kami dapat membuat pakaian seperti kemeja, kaos, jaket varsity, hoodie, dan berbagai macam jersey."
 
-  utter_orders:
-  - text: "Jika anda ingin membeli silakan hubungi kami di nomor +62 852-9598-5859."
+  utter_materials:
+    - text: "Kami memiliki berbagai bahan untuk membuat pakaian, seperti cotton combad 24s dan 30s, american drill, dan fleece."
 
-  utter_greet:
-  - text: "Hey! How are you?"
+  utter_ask_clothing_type:
+    - text: "Apa jenis pakaian yang ingin Anda pesan?"
+
+  utter_ask_material:
+    - text: "Bahan apa yang Anda inginkan untuk pakaian tersebut?"
+
+  utter_ask_quantity:
+    - text: "Berapa banyak yang ingin Anda pesan?"
 
   utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
+    - text: "Here is something to cheer you up:"
+      image: "https://i.imgur.com/nGF1K8f.jpg"
+  
   utter_did_that_help:
-  - text: "Did that help you?"
+    - text: "Did that help you?"
 
   utter_happy:
-  - text: "Great, carry on!"
+    - text: "Great, carry on!"
 
   utter_goodbye:
-  - text: "Bye"
+    - text: "Bye"
 
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  utter_order_summary:
+    - text: "Anda telah memesan {quantity} {materials} {clothing_type}(s). Terima kasih!"
 
 session_config:
   session_expiration_time: 60

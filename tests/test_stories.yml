@@ -2,6 +2,16 @@
 #### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
 
 stories:
+- story: order clothing with material and quantity
+  steps:
+  - user: |
+      saya ingin pesan
+    intent: orders
+  - action: order_form
+  - active_loop: order_form
+  - active_loop: null
+  - action: utter_summary
+
 - story: happy path 1
   steps:
   - user: |
